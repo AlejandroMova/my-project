@@ -19,6 +19,6 @@ jobs:
         image: alexmova13/my-project
         tags: v1, latest
         registry: docker.io
-        dockerfile: Dockerfile.ci
+        dockerfile: ../Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
