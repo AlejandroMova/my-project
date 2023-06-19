@@ -10,8 +10,8 @@ jobs:
   Webhook: 
     runs-on: ubuntu-latest
     steps:
-    - name: Webhook
-      uses: distributhor/workflow-webhook@v3
+    - name: Invoke deployment hook
+      uses: johannes-huther/webhook.sh@v1
       env:
         webhook_url: ${{ secrets.WEBHOOK_URL }}
         webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
