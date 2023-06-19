@@ -1,0 +1,17 @@
+name: Webhook
+
+on: 
+  push: 
+    branches: ["master"]
+  pull_request: 
+    branches: ["master"]
+  
+jobs: 
+  Webhook: 
+    runs-on: ubuntu-latest
+    steps:
+    - name: Webhook
+      uses: distributhor/workflow-webhook@v3
+      env:
+        webhook_url: ${{ secrets.WEBHOOK_URL }}
+        webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
