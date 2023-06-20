@@ -15,4 +15,3 @@ jobs:
       uses: distributhor/workflow-webhook@v3
       env:
         webhook_url: ${{ secrets.WEBHOOK_URL }}
-        data: '{"nombre": ${{ github.event.repository }} }'
