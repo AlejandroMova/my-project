@@ -8,11 +8,11 @@ on:
   
 jobs: 
   Webhook: 
+    if: ${{contains(github.event.head_commit.message, '#update')}}
     runs-on: ubuntu-latest
     steps:
     - name: Invoke deployment hook
       uses: distributhor/workflow-webhook@v3
-      if: ${{contains(github.event.head_commit.message, '#update')}}
       env:
         webhook_url: ${{ secrets.WEBHOOK_URL }}
         webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
